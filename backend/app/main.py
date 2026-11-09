@@ -40,12 +40,13 @@ app = FastAPI(
 
 app.add_middleware(
     CORSMiddleware,
-    allow_origins=["*"],
+    allow_origins=[
+        "https://groww-sip-discovery-engine-xi.vercel.app",
+    ],
     allow_credentials=True,
     allow_methods=["*"],
     allow_headers=["*"],
 )
-
 
 class IngestRequest(BaseModel):
     source: str = "all"  # play_store, app_store, reddit, youtube, tradingqna, all
