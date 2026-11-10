@@ -6,7 +6,7 @@ from dotenv import load_dotenv
 BASE_DIR = Path(__file__).resolve().parent.parent
 load_dotenv(BASE_DIR / ".env")
 
-DB_PATH = BASE_DIR / "data" / "discovery_engine.db"
+DB_PATH = Path(os.getenv("DB_PATH", "/tmp/discovery_engine.db"))
 DB_PATH.parent.mkdir(parents=True, exist_ok=True)
 
 
